@@ -34,3 +34,7 @@ nosetests.xml
 .project
 .pydevproject
 *~
+
+# OS generated files
+*.pyc
+*.DS_Store*
