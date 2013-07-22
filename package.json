@@ -1,21 +1,22 @@
 {
-  "name": "ip-tag",
+  "name": "auth-htpasswd",
   "types": ["module"],
   "version": "1.4",
-  "homepage": "http://github.com/shinken-monitoring/mod-ip-tag",
+  "homepage": "https://github.com/shinken-monitoring/mod-auth-htpasswd",
   "author": "Jean Gabès",
-  "description": "Tag host by their IP ranges",
+  "description": "Shinken module for UI authentification from Apache passwd files",
   "contributors": [
     {
       "name": "Jean Gabès",
       "email": "naparuba@gmail.com"
     }
   ],
-  "repository": "https://github.com/shinken-monitoring/mod-ip-tag",
+  "repository": "https://github.com/shinken-monitoring/mod-auth-htpasswd",
   "keywords": [
     "module",
-    "arbiter",
-    "ip"
+    "webui",
+    "auth",
+    "authentification"
   ],
   "dependencies": {
     "shinken": ">=1.4"
