@@ -40,7 +40,7 @@ from shinken.misc.md5crypt import apache_md5_crypt, unix_md5_crypt
 from shinken.basemodule import BaseModule
 
 properties = {
-    'daemons': ['webui', 'skonf'],
+    'daemons': ['webui', 'skonf', 'synchronizer'],
     'type': 'passwd_webui'
     }
 
