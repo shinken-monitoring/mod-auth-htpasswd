@@ -4,7 +4,7 @@
   "version": "1.4",
   "homepage": "https://github.com/shinken-monitoring/mod-auth-htpasswd",
   "author": "Jean Gabès",
-  "description": "Shinken module for UI authentification from Apache passwd files",
+  "description": "Shinken module for UI authentication from Apache passwd files",
   "contributors": [
     {
       "name": "Jean Gabès",
@@ -16,7 +16,7 @@
     "module",
     "webui",
     "auth",
-    "authentification"
+    "authentication"
   ],
   "dependencies": {
     "shinken": ">=1.4"

@@ -1,4 +1,4 @@
 mod-auth-htpasswd
 =================
 
-Shinken module for UI authentification from Apache passwd files
+Shinken module for UI authentication from Apache passwd files
