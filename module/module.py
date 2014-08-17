@@ -47,7 +47,7 @@ properties = {
 
 # called by the plugin manager
 def get_instance(plugin):
-    logger.info("Instantiate an Apache/Passwd UI module for plugin %s" % plugin.get_name())
+    logger.info("[Auth htpasswd] Instantiate an Apache/Passwd UI module for plugin %s" % plugin.get_name())
 
     instance = Passwd_Webui(plugin)
     return instance
@@ -60,7 +60,7 @@ class Passwd_Webui(BaseModule):
 
     # Try to connect if we got true parameter
     def init(self):
-        logger.debug("Connection test to the Apache/Passwd file")
+        logger.debug("[Auth htpasswd] Connection test to the Apache/Passwd file")
 
     # To load the webui application
     def load(self, app):
@@ -86,7 +86,7 @@ class Passwd_Webui(BaseModule):
                 else:
                     magic = None
                     salt = hash[:2]
-                logger.debug("PASSWD: %s %s %s" % (name, hash, salt))
+                logger.debug("[Auth htpasswd] PASSWD: %s %s %s" % (name, hash, salt))
                 # If we match the user, look at the crypt
                 if name == user:
                     if magic == 'apr1':
@@ -97,12 +97,12 @@ class Passwd_Webui(BaseModule):
                         compute_hash = crypt.crypt(password, salt)
                     # print "Computed hash", compute_hash
                     if compute_hash == hash:
-                        logger.info("Authentication success")
+                        logger.info("[Auth htpasswd] Authentication success")
                         return True
                 else:
-                    logger.debug("Authentication failed invalid name: %s %s" % (name, user))
+                    logger.debug("[Auth htpasswd] Authentication failed invalid name: %s %s" % (name, user))
         except Exception, exp:
-            logger.warning("Authentication against apache passwd file failed: %s " % (exp))
+            logger.warning("[Auth htpasswd] Authentication against apache passwd file failed: %s " % (exp))
             return False
         finally:
             try:
@@ -111,5 +111,5 @@ class Passwd_Webui(BaseModule):
                 pass
 
         # At the end, we are not happy, so we return False
-        logger.warning("Failed to authenticate user, return false")
+        logger.warning("[Auth htpasswd] Failed to authenticate user, return false")
         return False
